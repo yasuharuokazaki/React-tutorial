@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Blog from "./blog.jsx";
+import Calculator from "./maindoc.jsx";
+import Article from "./article";
 
 
 ReactDOM.render(
-  <Blog />,
-  document.getElementById("root")
+<Calculator />,
+document.getElementById("root")
 );
