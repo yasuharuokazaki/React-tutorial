@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Calculator from "./maindoc.jsx";
-import Article from "./article";
+import Calculator from "./calculator.jsx";
+
 
 
 ReactDOM.render(

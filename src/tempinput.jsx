@@ -1,18 +1,15 @@
-import React from "react"
+import React from "react";
+import BoilingVerdict from "./boil";
+const scaleNames = {
+    c:"Celcius",
+    f:"Fahrenheit"
+};
 
-function BoilingVerdict(props){
-    if(props.celsius >= 100){
-        return <p>水は沸騰しました。</p>;
-    }
-     
-    return <p>水は沸騰していません。</p>;
-}
-
-class Calculator extends React.Component {
+class TempInput extends React.Component {
     constructor(props){
         super(props);
         this.handleChange = this.handleChange.bind(this);
-        this.state = {temp:""};
+        this.state ={temp:""};
     }
 
     handleChange(e){
@@ -21,22 +18,18 @@ class Calculator extends React.Component {
 
     render(){
         const temp = this.state.temp;
+        const scale = this.props.scale;
         return(
             <fieldset>
-                <legend>
-                    摂氏で温度を入力してね！
-                </legend>
+                <legend>{scaleNames[scale]}で水温を入れてね：</legend>
                 <input
                     value={temp}
                     onChange={this.handleChange}
                 />
                 <BoilingVerdict celsius={parseFloat(temp)}/>
             </fieldset>
-
         );
     }
 }
 
-    
-
-export default Calculator;
+export default TempInput;
