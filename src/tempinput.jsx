@@ -1,5 +1,7 @@
 import React from "react";
-import BoilingVerdict from "./boil";
+
+
+
 const scaleNames = {
     c:"Celcius",
     f:"Fahrenheit"
@@ -13,11 +15,12 @@ class TempInput extends React.Component {
     }
 
     handleChange(e){
-        this.setState({temp:e.target.value});
+       
+        this.props.onTempChange(e.target.value);
     }
 
     render(){
-        const temp = this.state.temp;
+        const temp = this.props.temp;
         const scale = this.props.scale;
         return(
             <fieldset>
@@ -26,7 +29,6 @@ class TempInput extends React.Component {
                     value={temp}
                     onChange={this.handleChange}
                 />
-                <BoilingVerdict celsius={parseFloat(temp)}/>
             </fieldset>
         );
     }
